@@ -1,0 +1,9 @@
+<html>
+ <p>Input a number</p>
+     <form method="POST">{% csrf_token %}
+	     	<input type="text" name="numvalue" />
+		        <button type="submit" class="save btn btn-default">result</button>
+			    </form>
+			    	<p>Resulting square</p>
+				<p>{{rval}}</p>				    
+</html>
