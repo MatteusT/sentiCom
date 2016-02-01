@@ -6,4 +6,4 @@ def indexPage(request):
          rval = float(request.POST.get('numvalue'))**2
     else:
          rval = ''
-    return render(request, 'toyApp/index.html', {'rval': rval})# Create your views here.
+    return render(request, 'explore/index.html', {'rval': rval})# Create your views here.
