@@ -1,9 +1,13 @@
+
 <html>
- <p>Input a number</p>
+    <script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="http://www.pureexample.com/js/flot/jquery.flot.min.js"></script>    
+<p>Input a number</p>
      <form method="POST">{% csrf_token %}
 	     	<input type="text" name="numvalue" />
 		        <button type="submit" class="save btn btn-default">result</button>
 			    </form>
-			    	<p>Resulting square</p>
-				<p>{{rval}}</p>				    
+			    	<p>Resulting figure</p>
+				{{ rval.as_html }}
+
 </html>
