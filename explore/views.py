@@ -9,9 +9,12 @@ def indexPage(request):
     if request.method == "POST":
          keywords = request.POST.get('keywords')
          keywords = keywords.split(',')
-         x,y,bestarm = FindCorr(keywords)     
-##         x = np.random.random_sample(5)
-##         y = x*rval
+         try:
+            x,y,bestarm = FindCorr(keywords)
+         except:
+            x = np.random.random_sample(5)
+            y = np.random.random_sample(5)
+            bestarm = 'tweet was not recieved so no'
          data = np.vstack([x,y]).T
          data = data.tolist()
          data.append(['X','Y'])
