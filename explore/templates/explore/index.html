@@ -2,12 +2,19 @@
 <html>
     <script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="http://www.pureexample.com/js/flot/jquery.flot.min.js"></script>    
-<p>Input a number</p>
-     <form method="POST">{% csrf_token %}
-	     	<input type="text" name="numvalue" />
+<p>Input a keywords</p>
+
+				
+				
+				 <form method="POST">{% csrf_token %}
+	     	<input type="text" name="keywords" />
 		        <button type="submit" class="save btn btn-default">result</button>
 			    </form>
-			    	<p>Resulting figure</p>
-				{{ rval.as_html }}
-
+			{% if bestarm %}
+			{{ rplot.as_html }}
+			<p>The best time difference: {{ bestarm }} days</p>
+			{% endif %}
 </html>
+
+
+   
