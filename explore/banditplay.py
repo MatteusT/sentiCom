@@ -2,7 +2,7 @@ import tweepy
 import Quandl
 from textblob import TextBlob
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from Bandit import EpsilonGreedy
 
 ##keywords = ['oil','OPEC','Russia']
@@ -55,7 +55,7 @@ def FindCorr(keywords):
     bandit = EpsilonGreedy(len(arms))
 
     for i in range(nplays):
-        arm = bandit.choose_arm() 
+        arm = bandit.choose_arm()
         mdays = arms[arm]
         rwd = abs(np.corrcoef(qfluc[mdays:len(qfluc)],date_table[0:len(qfluc)-mdays])[1,0])
         bandit.update(arm,rwd)
